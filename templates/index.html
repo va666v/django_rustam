@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>New page from index.html</h1>
+
+{% if object_list %}
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Date</td>
+        <td>Name</td>
+        <td>Phone</td>
+    </tr>
+    {% for obj in object_list %}
+    <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order.dt }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+No objects
+{% endif %}
+</body>
+</html>
